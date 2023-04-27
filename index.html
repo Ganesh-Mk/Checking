@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="icon" href="icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Rubik:wght@300&family=Secular+One&family=Tilt+Warp&display=swap" rel="stylesheet">
+    <title>Ganesh-Mk Portfolio</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Capriola', sans-serif;
+        transition: .2s ease-in-out;
+    }
+    html,body{
+        overflow-x: hidden;
+    }
+    html{
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+    }
+    
+    /* =========================== Navbar section =========================== */
+    .container{
+        padding: 0 5rem;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.6rem 5rem;
+        top: 0;
+        position: sticky;
+        z-index: 100;
+        backdrop-filter: blur(.1rem);
+        background-image: linear-gradient(white 90%, transparent 100%);
+    
+    }
+    .logo{
+        background: url('gkLogo.png') no-repeat center/cover;
+        height: 3rem;
+        width: 5rem;
+    }
+    .navList{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+    }
+    
+    .navItems{
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.758);
+        font-size: 2rem;
+    }
+    
+    /* =========================== Home section ===========================  */
+    
+    .home{
+        background: url('black_dots_image.svg') no-repeat center/cover;
+    
+        margin-top: 1.5rem;
+        padding: 0 5rem;
+    
+        display: grid;
+        place-items: center;
+    }
+    .name{
+        display: grid;
+        place-items: center;
+    }
+    .name h1{
+        margin-top: 1rem;
+        font-size: 8rem;
+        font-family: revert;
+        color: rgb(67 67 67);
+    }
+    .name button{
+        border: none;
+        outline: none;
+        background: #ff6b6b;
+        color: white;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        border-radius: 3rem;
+        font-size: 2rem;  
+    }
+    .aboutContainer{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 3fr;
+        max-width: 130rem;
+        gap: 5rem;
+        border-radius: 2.5rem;
+        background-color: #212529;
+        margin: 4.8rem auto;
+        padding: 2rem 8rem;
+        box-shadow: .0rem 3.5rem 3.0rem 1.0rem rgba(0, 0, 0, 0.2);
+    }
+    .about{
+        display: grid;
+        place-items: center;
+        gap: inherit;
+    }
+    .aboutInfo{
+        display: grid;
+        place-items: center;
+    }
+    .myImage{
+        background: url('myImage.jpg') no-repeat center/cover;
+        border-radius: 1rem;
+        height: 27rem;
+      
+        width: 22rem;
+    }
+    .aboutContainer h2{
+        color: #d7d7d7;
+        font-size: 3rem;
+        font-family: unset;
+        background: linear-gradient(to right, #ffe066, #20c997);
+        background-clip: none;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 3.5rem;
+    }
+    .aboutContainer p {
+        color: #ffffffd6;
+        line-height: 2;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .linkItems{
+        margin: 0 1.5rem;
+        color: rgba(255, 255, 255, 0.662);
+        font-size: 4rem;
+        transition: .2s ease-in-out;
+    }
+    .linkItems:hover{
+        transform: scale(1.15);
+    }
+    
+    #twitter:hover{
+        color: rgb(0, 191, 255);
+    }
+    #github:hover{
+        color: rgb(137, 137, 137);
+    }
+    #linkedin:hover{
+        color: rgb(77, 151, 255);
+    }
+    #insta:hover{
+        color: rgb(255, 121, 87);
+    }
+    #whatsapp:hover{
+        color: rgb(126, 255, 112);
+    }
+    
+    .downAnimation{
+        position: relative;
+        animation: arrowAnime 2s infinite;
+    }
+    .downAnimation img {
+        height: 4rem;
+    }
+    
+    @keyframes arrowAnime{
+        0% {
+            top: 0;
+        }
+        50% {
+            top: 2rem;
+        }
+        100% {
+            top: 0;
+        }
+    }
+    
+    
+    /* =========================== Skill section ===========================  */
+    
+    
+    .skills{
+        margin-top: 6rem;
+        display: grid;
+        place-items: center;
+    }
+    
+    .skillHead{
+        font-size: 4rem;
+        margin-bottom: 6rem;
+    }
+    .skillContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+    
+    
+    
+    .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 60rem;
+        margin: 2rem;
+        height: 25rem;
+        border-radius: 3.2rem;
+        padding: 4rem;
+        position: relative; 
+        bottom: 0;
+        animation: upAnime .5s ease-in-out forwards;
+    }
+    .skill:hover {
+        animation: moveUp .4s ease-in-out forwards;
+    }
+    .skillNotHover{
+        animation: moveDown .4s ease-in-out forwards;
+    }
+    @keyframes moveUp {
+        from {
+            bottom: 0;
+        }
+        to {
+            bottom: 2rem;
+        }
+    }
+    @keyframes moveDown {
+        from {
+            bottom: 2rem;
+        }
+        to {
+            bottom: 0;
+        }
+    }
+    
+    
+    
+    
+    .skill img{
+        width: 10rem;
+    }
+    .js img{
+        width: 8.5rem;
+    }
+    .nodeJs img{
+        width: 13rem;
+    }
+    .sql img{
+        width: 14.5rem;
+    }
+    
+    
+    .skill h3{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin: 2rem 0 2rem 0;
+    } 
+    .sql h3{
+        text-transform: none;
+    }
+    .skill p{
+        font-size: 1.5rem;
+        color: #000000a8;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    
+    
+    .html{
+        background: linear-gradient(#ffd9d9, #fff);
+    }
+    .html:hover{
+        background: linear-gradient(#ffb4b4, #fff);
+    }
+    .css{
+        background: linear-gradient(#e8f3ff, #fff);
+    }
+    .css:hover{
+        background: linear-gradient(#c0deff, #fff);
+    }
+    .js{
+        background: linear-gradient(#fffae8, #fff);
+    }
+    .js:hover{
+        background: linear-gradient(#ffeba2, #fff);
+    }
+    .react{
+        background: linear-gradient(#e8fcff, #fff);
+    }
+    .react:hover{
+        background: linear-gradient(#aff4ff, #fff);
+    }
+    .nodeJs{
+        background: linear-gradient(#effcd3, #fff);
+    }
+    .nodeJs:hover{
+        background: linear-gradient(#dbff8e, #fff);
+    }
+    .sql{
+        background: linear-gradient(#ffe9d3, #fff);
+    }
+    .sql:hover{
+        background: linear-gradient(#ffd1a2, #fff);
+    }
+    
+    
+    
+    
+    /* =========================== Projects section ===========================  */
+    
+    
+    
+    .projects{
+        margin-top: 5rem;
+        background: linear-gradient(to bottom,rgb(218, 245, 255), white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects h1{
+        font-size: 3.4rem;
+        margin: 6rem 0;
+        color: #000000d4;
+        font-family: montserrat;
+    }
+    .project {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        height: 25rem;
+        width: 90%;
+        margin: 8rem 0;
+    }
+    
+    
+    .image{
+        height: 32rem;
+    }
+    
+    .tickTock .image{
+        background: url('tickTock.png') no-repeat center/cover;
+        border-radius: 3rem;
+        box-shadow: 0.5rem 1rem 4rem -2.5rem black;
+    }
+    .calculator .image{
+        background: url('calculator.png') no-repeat center/cover;
+        border-radius: 3rem;
+        box-shadow: 1rem 2rem 5rem -2rem black;
+    }
+    .todoList .image{
+        background: url('todolist.png') no-repeat center/cover;
+        border-radius: 3rem;
+        box-shadow: 0.5rem 1rem 4rem -2.5rem black;
+    }
+    .tictactoe .image{
+        background: url('tictactoe.png') no-repeat center/cover;
+        border-radius: 3rem;
+        box-shadow: 0.5rem 1rem 4rem -2.5rem black;
+    }
+    
+    
+    .projectInfo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 4rem;
+    }
+    .projectInfo h3{
+        font-size: 2.5rem;
+        font-family: montserrat;
+        color: #000000d4;
+        margin: 3rem 0;
+    }
+    .projectInfo p{
+        font-size: 1.7rem;
+        color: #000000a8;
+        line-height: 1.9;
+        text-align: center;
+    }
+    .projectInfo a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        box-shadow: 1px 1px 8px -4px black;
+        width: 12rem;
+        font-size: 1.5rem;
+        height: 4rem;
+        background-color: white;
+        color: #212529;
+        text-decoration: none;
+        border-radius: 0.8rem;
+        margin-top: 2.4rem;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .projectInfo a:hover {
+        color: white;
+        background-color: #212529;
+    }
+    
+    
+    
+    
+    /* =========================== Foooter section ===========================  */
+    
+    
+    .contact {
+        margin-top: 12rem;
+        background: #343440;
+        height: 10rem;
+        padding: 5rem 0;
+        display: grid;
+        place-items: center;
+       
+    }
+    .contact h2{
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+    
+    }
+    .contact a{
+        text-decoration: none;
+        font-size: 5rem;
+        text-align: center;
+        background: -webkit-linear-gradient(right, #ffe066, #20c997);
+        background-clip: none;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 1rem;
+    }
+    
+    
+    
+    
+    
+    
+    /* =========================== Responsive section ===========================  */
+    
+    @media (max-width: 1020px){
+        html{
+            font-size: 55%;
+        }
+    }
+    @media (max-width: 900px){
+        html{
+            font-size: 47%;
+        }
+    }
+    @media (max-width: 750px){
+        html{
+            font-size: 35%;
+        }
+    }
+    @media (max-width: 580px){
+        html{
+            font-size: 30%;
+        }
+        .navItems{
+            font-size: 3rem;
+        }
+        
+    }
+    @media (max-width: 505px){
+        html{
+            font-size: 35%;
+        }
+        .name h1{
+            font-size: 6rem;
+        }
+        .navItems{
+            font-size: 3rem;
+        }
+        .aboutContainer{
+            grid-template-columns: repeat(1, 1fr);
+            padding: 4rem 8rem;
+        }
+        .aboutContainer div{
+            display: grid;
+            place-items: center;
+        }
+        .links{
+            grid-auto-flow: column;
+        }
+        .skill {
+            height: 30rem;
+            margin: 4rem 0;
+        }
+        .name h1{
+            font: 3.5rem;
+        }
+        .skillContainer{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .skill h3 {
+            font-size: 3rem;
+        }
+        .skill img {
+            width: 13rem;
+        }
+        .skill p {
+            font-size: 2rem;
+            line-height: 1.8;
+        }
+
+        .js img{
+            width: 10rem;
+        }
+        .react img{
+            width: 12rem;
+        }
+        .nodeJs img{
+            width: 14rem;
+        }
+        .sql img{
+            width: 15rem;
+        }
+        .skillHead {
+            font-size: 5rem;
+        }
+
+        .projects h1 {
+            font-size: 5rem;
+        }
+        .project {
+            grid-template-columns: auto;
+            height: 80rem;
+            width: 90%;
+            margin: 8rem 0;
+        }
+        .image{
+            height: 44rem;
+        }
+        .projectInfo h3 {
+            font-size: 3rem;
+        }
+        .projectInfo p {
+            font-size: 2rem;
+        }
+        .contact{
+            padding: 3rem 0;
+        }
+        .contact a {
+            font-size: 3rem;
+            padding: 1rem 3rem;
+        }
+        .project {
+       
+            margin: 10rem 0;
+        }
+        .linkItems {
+            margin: 0 2rem;
+   
+        }
+        
+
+
+
+
+
+
+
+
+
+
+    }
+    @media (max-width: 470px){
+        html{
+            font-size: 35%;
+        }
+        .home{
+            padding: 0;
+            margin-top: 4rem;
+        }
+        .navItems{
+            font-size: 2.5rem;
+        }
+
+     
+        .aboutContainer{
+            padding: 3rem 2rem;
+        }
+    }
+
+    /* ============== mobile view ============== */
+    @media (max-width: 410px){
+        .container{
+            padding: 0 3rem;
+        }
+        .navItems{
+            font-size: 2.3rem;
+        }
+        .name h1{
+            font-size: 5rem;
+        }
+        .projects h1 {
+            font-size: 5rem;
+        }
+        .project {
+            grid-template-columns: auto;
+            height: 70rem;
+            width: 90%;
+        }
+        .image{
+            height: 33rem;
+        }
+        .projectInfo h3 {
+            font-size: 3rem;
+        }
+        .projectInfo p {
+            font-size: 2rem;
+        }
+        .contact{
+            padding: 3rem 0;
+        }
+        .contact a {
+            font-size: 3rem;
+            padding: 1rem 3rem;
+        }
+
+
+        
+
+
+
+
+
+
+
+
+
+    }
+    @media (max-width: 330px){
+        nav{
+            padding: 3rem 2rem;
+        }
+        .container{
+            padding: 0 2rem;
+        }
+        .name h1{
+            font-size: 4rem; 
+        }
+        .navList{
+            gap: 3rem;
+        }
+        
+    }
+    @media (max-width: 285px){
+        .navList{
+            gap: 2rem;
+        }
+    }
+ 
+    
+</style>
+<body id="home">
+    <nav>
+        <div class="logo"></div>
+        <div class="navList">
+            <a href="#home" class="navItems">Home</a>
+            <a href="#skills" class="navItems">Skills</a>
+            <a href="#projects" class="navItems">Projects</a>
+        </div>
+    </nav>
+    <div class="container">
+        <section class="home" data-aos="fade-up">
+            <div class="name" data-aos="fade-up">
+                <h1>HI! &nbsp;I &nbsp;AM</h1>
+                <h1>GANESH &nbsp;MK</h1>
+                <button>WEB DEVELOPER</button>
+            </div>
+            <div class="aboutContainer">
+                <div>
+                    <div class="myImage"></div>
+                </div>
+                <div class="about" data-aos="fade-up">
+                    <div class="aboutInfo">
+                        <h2>ABOUT &nbsp; ME</h2>
+                        <p>"I enjoy working on creative and challenging projects that allow me to apply my technical
+                            skills and push myself to grow as a web developer."</p>
+                    </div>
+                    <div class="links">
+                        <a href="https://wa.me/9380795986" target="_blank">
+                            <ion-icon class="linkItems" id="whatsapp" name="logo-whatsapp"></ion-icon>
+                        </a>
+                        <a href="https://github.com/Ganesh-Mk" target="_blank">
+                            <ion-icon class="linkItems" id="github" name="logo-github"> </ion-icon>
+                        </a>
+                        <a href="https://www.instagram.com/ganesh_mk_247/" target="_blank">
+                            <ion-icon class="linkItems" id="insta" name="logo-instagram"> </ion-icon>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ganesh-koparde-044776254/" target="_blank">
+                            <ion-icon class="linkItems" id="linkedin" name="logo-linkedin"> </ion-icon>
+                        </a>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="downAnimation">
+                <img src="down-arrow.svg" alt="downArrow">
+            </div>
+        </section>
+        <section class="skills" id="skills" data-aos="fade-up">
+            <div class="skillHead">Skills</div>
+            <div class="skillContainer">
+                <div class="skill html" data-aos="fade-right">
+                    <img src="html.png" alt="html icon">
+                    <h3>HTML</h3>
+                    <p class="skillInfo">"Proficiency in creating semantically structured and Responsible website,
+                        utilizing
+                        modern HTML5 features, and optimizing web page performance."</p>
+                </div>
+                <div class="skill css" data-aos="fade-left">
+                    <img src="css.png" alt="css icon">
+                    <h3>CSS</h3>
+                    <p class="skillInfo">"Proficiency in creating responsive layouts, implementing animations, using
+                        preprocessors like Sass, and integrating CSS with other web technologies."</p>
+                </div>
+                <div class="skill js" data-aos="fade-right">
+                    <img src="javascript.png" alt="css icon">
+                    <h3>Javascript</h3>
+                    <p class="skillInfo">"Proficiency in writing complex algorithms, using modern ES6+ features, and
+                        implementing asynchronous programming with promises and async/await"</p>
+                </div>
+                <div class="skill react" data-aos="fade-left">
+                    <img src="react.png" alt="react icon">
+                    <h3>React.Js</h3>
+                    <p class="skillInfo">"Proficiency in extensive experience with component-based architecture, state
+                        management, and integration with third-party libraries and APIs."</p>
+                </div>
+                <div class="skill nodeJs" data-aos="fade-right">
+                    <img src="nodeJs.png" alt="nodeJs icon">
+                    <h3>Node.Js</h3>
+                    <p class="skillInfo">"Proficiency in building scalable server-side applications, working with
+                        RESTful
+                        APIs, and implementing authentication mechanisms to provide efficient website"</p>
+                </div>
+                <div class="skill sql" data-aos="fade-left">
+                    <img src="sql.png" alt="sql icon">
+                    <h3>MySQL</h3>
+                    <p class="skillInfo">"Proficiency in writing complex SQL queries, optimizing database performance,
+                        and
+                        designing database schemas for popular relational DBMS."</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="projects" id="projects" >
+        <h1>PROJECTS</h1>
+        <div class="project tickTock">
+            <div class="image" data-aos="fade-right"></div>
+            <div class="projectInfo" data-aos="fade-left">
+                <h3>Tick Tock Time</h3>
+                <p>This mini-Project has a features of digital clock display, along with a unique visual element where a
+                    floating stroke indicates the "tick" and "tock" of the clock. The project is designed to be simple
+                    with the clock providing an accurate display of the current time. </p>
+                <a href="https://ganesh-mk.github.io/Tick-Tock_Clock/" target="_blank">Visit</a>
+            </div>
+        </div>
+        <div class="project tictactoe">
+            <div class="image" data-aos="fade-right"></div>
+            <div class="projectInfo" data-aos="fade-left">
+                <h3>Tic Tac Toe</h3>
+                <p>This game that has features like turn indicator, reset button, and user-friendly interface. The turn
+                    indicator shows which player's turn it is, while the reset button allows users to start a new game
+                    without reloading the page. With its easy-to-use interface</p>
+                <a href="https://ganesh-mk.github.io/TicTacToe/" target="_blank">Visit</a>
+            </div>
+        </div>
+        <div class="project todoList">
+            <div class="image" data-aos="fade-right"></div>
+            <div class="projectInfo" data-aos="fade-left">
+                <h3>Todo List</h3>
+                <p>This project is functional tool that allows users to add and delete tasks as needed. The interface is
+                    designed to be user-friendly and responsive, automatically adding a scrollbar if the list becomes
+                    too long. Scrollbar doesn't work on mobile devices, only on desktop mode.</p>
+                <a href="https://ganesh-mk.github.io/ToDoList./" target="_blank">Visit</a>
+            </div>
+        </div>
+        <div class="project calculator ">
+            <div class="image" data-aos="fade-right"></div>
+            <div class="projectInfo" data-aos="fade-left">
+                <h3>Calculator</h3>
+                <p>functional and visually appealing iPhone-style calculator. It includes standard mathematical
+                    functions, as well as special features like "All Cancel," "Cancel," and a history of previous
+                    calculations. This project provides users with an efficient and user-friendly calculator.</p>
+                <a href="https://ganesh-mk.github.io/Calculator/" target="_blank">Visit</a>
+            </div>
+        </div>
+    </section>
+    <footer class="contact">
+        <h2>Get in touch</h2>
+        <a href="mailto:ganeshmk247@example.com">ganeshmk247@gmail.com</a>
+    </footer>
+
+    <!-- script tags -->
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800
+        });
+    </script>
+    <script>
+        let skillBoxs = document.querySelectorAll(".skill");
+        skillBoxs.forEach((e) => {
+            e.addEventListener("mouseleave", () => {
+                e.classList.add("skillNotHover");
+            })
+        })
+    </script>
+</body>
+</html>
