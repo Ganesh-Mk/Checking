@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
-  const [head, setHead] = useState("Hi");
+  const [head, setHead] = useState("Hello");
 
   const handleSubmit = () => {
     axios
